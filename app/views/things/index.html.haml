@@ -1,0 +1,8 @@
+%h1 All the things
+
+%table
+  - Thing.all.each do |thing|
+    %tr
+      %td
+        = link_to "ID ##{thing.id}: \"#{thing.name}\" (it's #{thing.yes_or_no}, by the way)", thing
+
