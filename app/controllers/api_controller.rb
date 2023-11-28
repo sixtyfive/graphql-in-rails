@@ -1,15 +1,15 @@
+# frozen_string_literal: true
+
 class ApiController < ApplicationController
-  protect_from_forgery with: :null_session
+  protect_from_forgery(with: :null_session)
 
   def execute
-    pp params[:variables]
-    pp params[:query]
-    pp params[:operationName]
-    # variables = {}
-    query = '{thing {name}}'
-    # operation_name = ''
-    # context = {} # e.g. the current user, if any
-    result = Schema.execute(query) #, variables: variables, context: context, operation_name: operation_name)
-    render json: result
+    result = TestappSchema.execute(
+      params[:query],
+      variables: params[:variables],
+      context: {}, # user / token / etc.
+      operation_name: params[:operationName]
+    )
+    render(json: result)
   end
 end

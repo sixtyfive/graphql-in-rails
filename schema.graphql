@@ -1,0 +1,23 @@
+"""
+The query root of this schema
+"""
+type Query {
+  """
+  Find a thing by ID
+  """
+  thing(id: ID!): Thing
+
+  """
+  Find all the things
+  """
+  things: [Thing!]
+}
+
+"""
+A thing
+"""
+type Thing {
+  id: ID!
+  name: String
+  yesOrNo: Boolean
+}
