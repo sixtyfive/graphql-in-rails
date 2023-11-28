@@ -1,5 +1,5 @@
 module Types
-  class ThingType < Types::BaseObject
+  class ThingType < Types::Base::Object
     description 'A thing'
     field :id, ID, null: false
     field :name, String

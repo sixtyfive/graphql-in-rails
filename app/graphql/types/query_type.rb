@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Types
-  class QueryType < Types::BaseObject
+  class QueryType < Types::Base::Object
     description 'The query root of this schema'
 
     field(:thing, Types::ThingType, 'Find a thing by ID'){argument :id, ID}
